@@ -20,6 +20,7 @@
             font-size: 25px;
             color: #818181;
             display: block;
+            
           }
 
           .sidenav a:hover {
@@ -41,13 +42,14 @@
   <body>
     <div class="sidenav">
         <a href="index.html">About</a>
-        <a href="#">Services</a>
+        <a href="results.html">Services</a>
         <a href="#">Clients</a>
         <a href="#">Contact</a>
     </div>
     
     <div class="main">
         
+        <center><h1>Let's Do an Advanced Search</h1></center>
         
         <script>
           (function() {
@@ -58,11 +60,14 @@
             gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(gcse, s);
-          })();
+            })();
         </script>
-        <gcse:searchbox></gcse:searchbox>
+<gcse:searchbox></gcse:searchbox>
+       
         
         <gcse:searchresults></gcse:searchresults>
+        
+        <iframe name="body1" width="100%" height="1000px"></iframe>
     </div>
         
     
