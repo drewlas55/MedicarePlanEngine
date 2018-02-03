@@ -1,17 +1,63 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <style>
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+          }
+
+        .sidenav a {
+            padding: 6px 6px 6px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+          }
+
+          .sidenav a:hover {
+              color: #f1f1f1;
+          }
+
+          .main {
+              margin-left: 200px; /* Same as the width of the sidenav */
+          }
+
+          @media screen and (max-height: 450px) {
+              .sidenav {padding-top: 15px;}
+                .sidenav a {font-size: 18px;}
+          }
+      </style>
     <title>Welcome to the future</title>
   </head>
   <body>
-    <div data-role="page">
-      <div data-role="footer" data-position="fixed">
+    <div class="sidenav">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+    
+    <div class="main">
         <h1>Ready to find out what plan you should take?</h1>
-      </div>
+      
       <form>
           What are your conditions:<br>
           <input type="text" name="conditions"><br>
         </form>
+        
     </div>
+        
+    
+      <script>
+          
+      </script>
   </body>
 </html>
