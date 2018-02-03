@@ -1,54 +1,24 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <style>
-        input[type=text], select {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
+      #myInput {
+        padding: 20px;
+        margin-top: -6px;
+        border: 0;
+        border-radius: 0;
+        background: #f1f1f1;
         }
-
-        input[type=submit] {
-            width: 100%;
-            background-color: lightblue;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        input[type=submit]:hover {
-            background-color: lightcyan;
-        }
-
-          button {
-               width: 100%;
-            background-color: lightblue;
-            color: black;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-          }
-
-          button:hover {
-             background-color: lightcyan;
-          }
 
         div {
             border-radius: 5px;
             background-color: #f2f2f2;
             padding: 20px;
-          }
-</style>
-      <style>
+        }
+
         .sidenav {
             height: 100%;
             width: 200px;
@@ -82,9 +52,11 @@
                 .sidenav a {font-size: 18px;}
           }
       </style>
-    <title>Welcome to the future</title>
-  </head>
-  <body>
+      <title>Welcome to the future</title>
+    </head>
+    
+    <!-- end of head -->
+    <body>
     <div class="sidenav">
         <a href="#">Home</a>
         <a href="insurances.html">Services</a>
@@ -92,78 +64,35 @@
         <a href="advancedSearch.html">Advanced Search</a>
     </div>
 
-    <div class="main">
-        <h1>Ready to find out what plan you should take?</h1>
-
-      <form action="insurances.html">
-          <center><h1>Start a Search Now</h1><br></center>
-          <input type="text" name="medications" id="medications" placeholder="Medication"><br>
-          <input type="text" name="location" id="location" placeholder="Location"><br>
-
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for conditions.." title="Type in a name">
-<table id="myTable">
-  <tr class="header">
-    <th style="width:60% align-left">Conditions</th>
-  </tr>
-  <tr>
-    <td>1</td>
-  </tr>
-  <tr>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>4</td>
-  </tr>
-  <tr>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>6</td>
-  </tr>
-  <tr>
-    <td>7</td>
-  </tr>
-  <tr>
-    <td>8</td>
-  </tr>
-  <tr>
-    <td>9</td>
-  </tr>
-  <tr>
-    <td>10</td>
-  </tr>
-</table>
+  <div class="main">
+    <h1>Ready to find out what plan you should take?</h1>
+    <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example<span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <input class="form-control" id="myInput" type="text" placeholder="Search..">
+      <li><a href="#">Condition 1</a></li>
+      <li><a href="#">Condition 2</a></li>
+      <li><a href="#">Condition 3</a></li>
+      <li><a href="#">Condition 4</a></li>
+      <li><a href="#">Condition 5</a></li>
+      <li><a href="#">Condition 6</a></li>
+      <li><a href="#">Condition 7</a></li>
+      <li><a href="#">Condition 8</a></li>
+      <li><a href="#">Condition 9</a></li>
+      <li><a href="#">Condition 10</a></li>
+    </ul>
+  </div>
+</div>
 
 <script>
-function myFunction() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".dropdown-menu li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
 </script>
-          <a href="results.html"><button>Sumbit</button></a>
-        </form>
-
-    </div>
-
-
-      <script type="text/javascript" src="scrpitt.js">
-
-      </script>
   </body>
 </html>
