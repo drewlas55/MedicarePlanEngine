@@ -6,7 +6,7 @@ function Validate() {
     
                 var input4 = document.getElementById("input4");
     
-    document.getElementById("search").innerHTML = input1.value;
+    document.getElementById("myInput").innerHTML = input1.value;
 
 
 }
