@@ -5,7 +5,13 @@
 
     <link rel="stylesheet" type="text/css" href="pc.css">
       
-    <title>Welcome to the future</title>
+      <title>Services</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
   </head>
   <body>
     <div class="sidenav">
@@ -15,13 +21,58 @@
     </div>
     
     <div class="main">
-        <h1>Make insurance table here</h1>
+        <div class="container">
+  <h2>Filterable Table</h2>
+  <p>Type something in the input field to search the table for first names, last names or emails:</p>  
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <br>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Insurance</th>
+        <th>Best For</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <tr>
+        <td>Unitedhealth</td>
+        <td>Diabetes</td>
+          <td><a href="http://www.unitedhealthgroup.com" target="_blank">http://www.unitedhealthgroup.com</a></td>
+      </tr>
+      <tr>
+        <td>Anthem</td>
+        <td>Breast Cancer</td>
+        <td><a href="https://www.antheminc.com" target="_blank">https://www.antheminc.com</a></td>
+      </tr>
+      <tr>
+        <td>Kaiser Foundation</td>
+        <td>Diabetes</td>
+        <td><a href="http://www.kff.org" target="_blank">http://www.kff.org</a></td>
+      </tr>
+      <tr>
+        <td>Humana</td>
+        <td>Dental</td>
+        <td><a href="https://www.humana.com" target="_blank">https://www.humana.com</a></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <p>Note that we start the search in tbody, to prevent filtering the table headers.</p>
+</div>
         
     </div>
         
     
       <script>
-          
-      </script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
   </body>
 </html>
