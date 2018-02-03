@@ -26,7 +26,22 @@
         input[type=submit]:hover {
             background-color: lightcyan;
         }
-
+          
+          button {
+               width: 100%;
+            background-color: lightblue;
+            color: black;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+          
+          button:hover {
+             background-color: lightcyan; 
+          }
+          
         div {
             border-radius: 5px;
             background-color: #f2f2f2;
@@ -72,9 +87,9 @@
   <body>
     <div class="sidenav">
         <a href="#">Home</a>
-        <a href="advancedSearch.html">Services</a>
-        <a href="#">Results</a>
-        <a href="#">Advanced Search</a>
+        <a href="">Services</a>
+        <a href="results.html">Results</a>
+        <a href="advancedSearch.html">Advanced Search</a>
     </div>
     
     <div class="main">
@@ -84,7 +99,7 @@
           <center><h1>Start a Search Now</h1><br></center>
           <input type="text" name="conditions" placeholder="Insurance / Health Plan"><br>
           <input type="text" name="location" placeholder=" Location"><br>
-          <input type="submit" value="Submit">
+          <a href="results.html"><button>Sumbit</button></a>
           
           
         </form>
