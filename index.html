@@ -29,63 +29,31 @@
 
   <div class="main">
     <h2 style="text-align: center;">What plan you should take?</h2>
+
     <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Conditions<span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <input class="form-control" id="conditions" type="text" placeholder="Search..">
-      <li><a href="#">Condition 1</a></li>
-      <li><a href="#">Condition 2</a></li>
-      <li><a href="#">Condition 3</a></li>
-      <li><a href="#">Condition 4</a></li>
-      <li><a href="#">Condition 5</a></li>
-      <li><a href="#">Condition 6</a></li>
-      <li><a href="#">Condition 7</a></li>
-      <li><a href="#">Condition 8</a></li>
-      <li><a href="#">Condition 9</a></li>
-      <li><a href="#">Condition 10</a></li>
-    </ul>
+      <div>
+        <a href="insurances.html"><button class="w3-gray">Submit</button></a>
+      </div>
+    </div>
   </div>
-  <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Medications<span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <input class="form-control" id="medications" type="text" placeholder="Search..">
-    <li><a href="#">medication 1</a></li>
-    <li><a href="#">medication 2</a></li>
-    <li><a href="#">medication 3</a></li>
-    <li><a href="#">medication 4</a></li>
-    <li><a href="#">medication 5</a></li>
-    <li><a href="#">medication 6</a></li>
-    <li><a href="#">medication 7</a></li>
-    <li><a href="#">medication 8</a></li>
-    <li><a href="#">medication 9</a></li>
-    <li><a href="#">medication 10</a></li>
-  </ul>
-</div>
-<div class="dropdown">
-
-
-</div>
-      <a href="insurances.html"><button>Submit</button></a>
-</div>
-
         
-<script>
-$(document).ready(function(){
-  $("#medications").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $(".dropdown-menu li").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    <script>
+    $(document).ready(function(){
+      $("#medications").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".dropdown-menu li").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
     });
-  });
-});
-$(document).ready(function(){
-  $("#conditions").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $(".dropdown-menu li").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    $(document).ready(function(){
+      $("#conditions").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".dropdown-menu li").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
     });
-  });
-});
-</script>
+    </script>
   </body>
 </html>
